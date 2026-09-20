@@ -30,10 +30,7 @@ jobs:
 
       - name: Run sync
         env:
-          # Name your repo secret GH_ANALYTICS_TOKEN (not GITHUB_TOKEN — that's reserved by GHA)
-          # and map it here so the backend code sees GITHUB_TOKEN
-          GITHUB_TOKEN: ${{ secrets.GH_ANALYTICS_TOKEN }}
-          GITHUB_USERNAME: ${{ secrets.GH_USERNAME }}
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
-          DB_NAME: ${{ secrets.DB_NAME }}
+    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    GITHUB_USERNAME: ${{ secrets.GH_USERNAME }}
+    MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: python scripts/sync.py
